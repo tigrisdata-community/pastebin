@@ -1,0 +1,1 @@
+export { Paste, createPaste } from "./models/paste";

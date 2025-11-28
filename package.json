@@ -1,0 +1,47 @@
+{
+  "name": "@tigrisdata-community/pastebin",
+  "version": "1.0.0",
+  "description": "A simple pastebin backed by Tigris",
+  "keywords": [
+    "example"
+  ],
+  "homepage": "https://github.com/tigrisdata-community/pastebin#readme",
+  "bugs": {
+    "url": "https://github.com/tigrisdata-community/pastebin/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tigrisdata-community/pastebin.git"
+  },
+  "license": "ISC",
+  "author": "Tigris Data",
+  "type": "commonjs",
+  "main": "dist/main.js",
+  "scripts": {
+    "test": "npm run test",
+    "build": "tsc",
+    "start": "node dist/main.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/main.ts",
+    "watch": "tsc --watch",
+    "build:css": "tailwindcss -i ./src/public/input.css -o ./src/public/output.css --watch"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.5",
+    "@types/express-handlebars": "^5.3.1",
+    "@types/node": "^24.10.1"
+  },
+  "dependencies": {
+    "@tigrisdata/keyv-tigris": "^1.0.4",
+    "autoprefixer": "^10.4.22",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.4",
+    "express-validator": "^7.3.1",
+    "keyv": "^5.5.4",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3",
+    "uuidv7": "^1.0.2"
+  }
+}
