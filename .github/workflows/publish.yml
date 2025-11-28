@@ -36,6 +36,7 @@ jobs:
             ./docker-bake.hcl
           # Uses the default group in docker-bake.hcl which targets "www" (push=true)
           targets: default
+          push: true
           set: |
             *.cache-from=type=gha
             *.cache-to=type=gha,mode=max
