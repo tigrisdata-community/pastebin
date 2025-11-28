@@ -4,6 +4,7 @@ import { engine } from 'express-handlebars';
 import Handlebars from 'handlebars';
 import Keyv from 'keyv';
 import { KeyvTigris } from '@tigrisdata/keyv-tigris';
+import KeyvSqlite from '@keyv/sqlite';
 import { uuidv7 } from "uuidv7";
 import { body, matchedData, validationResult } from "express-validator";
 
@@ -38,7 +39,13 @@ Handlebars.registerHelper('formatRFC3339', function (date) {
   }
 });
 
-const store = new KeyvTigris();
+const store = new KeyvTigris({
+  bucket: process.env['TIGRIS_BUCKET'],
+  accessKeyId: process.env['TIGRIS_STORAGE_ACCESS_KEY_ID'],
+  secretAccessKey: process.env['TIGRIS_STORAGE_SECRET_ACCESS_KEY'],
+  endpoint: process.env['TIGRIS_STORAGE_ENDPOINT'],
+});
+//const store = new KeyvSqlite('sqlite://./var/database.sqlite');
 const pastes = new Keyv<Paste>({ store, namespace: "paste" });
 
 // Routes
