@@ -10,7 +10,7 @@ To get started:
 4. Start the service in Docker:
 
    ```text
-   docker run --name pastebin --env-file .env -p 3333:3333 ghcr.io/tigrisdata-community/pastebin
+   docker run --rm -it --name pastebin --env-file .env -p 3333:3333 ghcr.io/tigrisdata-community/pastebin
    ```
 
 Then open your browser to [localhost:3333](http://localhost:3333) and post away! All your posts will be seamlessly stored across the globe in Tigris.
